@@ -15,4 +15,8 @@ test('E2E Mayan', async ({browser}) =>
     // Log in
     const loginPage = poManager.getLoginPage();
     await loginPage.validLogin(dataset.username, dataset.password)
+    // Wait for products and Add to cart
+    const productsPage = poManager.getProductsPage();
+    await productsPage.waitForProducts();
+
 });
