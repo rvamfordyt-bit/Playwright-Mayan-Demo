@@ -32,5 +32,7 @@ test('E2E Mayan', async ({browser}) =>
     await checkOutOverviewPage.validateProductInCheckoutOverview(dataset.productName);
     await checkOutOverviewPage.validateTotalPrice();
     await checkOutOverviewPage.clickFinish();
-    await page.pause();
+    // Checkout complete page
+    const checkoutComplete = poManager.getCheckoutComplete();
+    await checkoutComplete.validateCheckoutComplete(dataset.checkoutCompleteHeader);
 });

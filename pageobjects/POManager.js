@@ -3,6 +3,7 @@ const {ProductsPage} = require('./ProductsPage.js');
 const {CartPage} = require('./CartPage.js');
 const {CheckOutInformationPage} = require('./CheckOutInformationPage.js');
 const {CheckOutOverviewPage} = require('./CheckOutOverviewPage.js');   
+const {CheckoutComplete} = require('./CheckoutComplete.js');
 
 class POManager{
     constructor(page)
@@ -13,6 +14,7 @@ class POManager{
         this.cartPage = new CartPage(this.page);
         this.checkOutInformationPage = new CheckOutInformationPage(this.page);
         this.checkOutOverviewPage = new CheckOutOverviewPage(this.page);
+        this.checkoutComplete = new CheckoutComplete(this.page);
     }
     getLoginPage()
     {
@@ -33,6 +35,10 @@ class POManager{
     getCheckOutOverviewPage()
     {
         return this.checkOutOverviewPage;
+    }
+    getCheckoutComplete()
+    {
+        return this.checkoutComplete;
     }
 }
 module.exports = {POManager};
