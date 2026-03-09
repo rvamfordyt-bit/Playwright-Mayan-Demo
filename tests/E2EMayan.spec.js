@@ -1,6 +1,6 @@
 const {test, expect} = require('@playwright/test');
-const {POManager} = require('../pageobjects/POManager');
-const dataset = JSON.parse(JSON.stringify(require('../utils/E2EMayanpageobjectpatternTestData.json')));
+const {POManager} = require('../pageobjects/POManager.js');
+const dataset = JSON.parse(JSON.stringify(require('../utils/E2EMayanPageObjectPatternTestData.json')));
 
 test('E2E Mayan', async ({browser}) =>
 {
@@ -10,4 +10,9 @@ test('E2E Mayan', async ({browser}) =>
     // Open page and verify title
     await page.goto("https://www.saucedemo.com/");
     await expect(page).toHaveTitle("Swag Labs");
+    // Create PO Manager instance
+    const poManager = new POManager(page);
+    // Log in
+    const loginPage = poManager.getLoginPage();
+    await loginPage.validLogin(dataset.username, dataset.password)
 });
