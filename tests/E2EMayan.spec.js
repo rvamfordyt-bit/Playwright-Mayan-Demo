@@ -8,8 +8,8 @@ test('E2E Mayan', async ({browser}) =>
     const context = await browser.newContext();
     const page = await context.newPage();
     // Open page and verify title
-    await page.goto("https://www.saucedemo.com/");
-    await expect(page).toHaveTitle("Swag Labs");
+    await page.goto(dataset.url);
+    await expect(page).toHaveTitle(dataset.PageTitle);
     // Create PO Manager instance
     const poManager = new POManager(page);
     // Log in
@@ -18,5 +18,7 @@ test('E2E Mayan', async ({browser}) =>
     // Wait for products and Add to cart
     const productsPage = poManager.getProductsPage();
     await productsPage.waitForProducts();
+    await productsPage.addToCartByName(dataset.productName,dataset.removeButtonText);
 
+    await page.pause();
 });
