@@ -23,5 +23,9 @@ test('E2E Mayan', async ({browser}) =>
     const cartPage = poManager.getCartPage();
     await cartPage.validateProductInCart(dataset.productName);
     await cartPage.clickCheckout();
+    // Checkout information page
+    const checkOutInformationPage = poManager.getCheckOutInformationPage();
+    await checkOutInformationPage.validateCheckoutInformation();
+    await checkOutInformationPage.fillCheckoutInformation(dataset.firstName, dataset.lastName, dataset.postalCode);
     await page.pause();
 });
