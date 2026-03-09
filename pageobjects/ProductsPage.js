@@ -24,7 +24,6 @@ class ProductsPage
             if(await this.itemList.nth(i).locator(this.itemName).textContent() === productName)
             {
                 await this.itemList.nth(i).locator(this.addToCartButton).click();
-                console.log(await this.itemList.nth(i).locator(this.removeButton).textContent());
                 expect(await this.itemList.nth(i).locator(this.removeButton).textContent() === removeButtonText).toBeTruthy();
                 break;
             }
