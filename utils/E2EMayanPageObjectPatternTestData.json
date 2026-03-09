@@ -7,5 +7,6 @@
     "removeButtonText": "Remove",
     "firstName": "Alice",
     "lastName": "Poon",
-    "postalCode": "12345"
+    "postalCode": "12345",
+    "completeHeader": "Thank you for your order!"
 }
