@@ -10,7 +10,8 @@ class CartPage
     }
     async validateProductInCart(productName)
     {
-        expect(await this.itemName.first().textContent()).toBe(productName)
+        await expect(this.checkoutButton).toBeVisible();
+        await expect(this.itemName.first()).toHaveText(productName);
     }
     async clickCheckout()
     {

@@ -15,7 +15,7 @@ class CheckOutOverviewPage
     }
     async validateProductInCheckoutOverview(productName)
     {
-        expect(await this.itemName.first().textContent()).toBe(productName)
+        await expect(this.itemName.first()).toHaveText(productName);
     }
     async validateTotalPrice()
     {

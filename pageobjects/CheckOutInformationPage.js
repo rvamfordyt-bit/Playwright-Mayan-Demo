@@ -12,9 +12,9 @@ class CheckOutInformationPage
     }
     async validateCheckoutInformation()
     {
-        expect(await this.firstName.isVisible()).toBeTruthy();
-        expect(await this.lastName.isVisible()).toBeTruthy();
-        expect(await this.postalCode.isVisible()).toBeTruthy();
+        await expect(this.firstName).toBeVisible();
+        await expect(this.lastName).toBeVisible();
+        await expect(this.postalCode).toBeVisible();
     }
     async fillCheckoutInformation(firstName,lastName,postalCode)
     {

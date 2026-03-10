@@ -13,7 +13,7 @@ class ProductsPage
     }
     async waitForProducts()
     {
-        await this.itemList.first().waitFor();
+        await expect(this.itemList.last()).toBeVisible();
     }
     async addToCartByName(productName,removeButtonText)
     {
@@ -24,7 +24,7 @@ class ProductsPage
             if(await this.itemList.nth(i).locator(this.itemName).textContent() === productName)
             {
                 await this.itemList.nth(i).locator(this.addToCartButton).click();
-                expect(await this.itemList.nth(i).locator(this.removeButton).textContent() === removeButtonText).toBeTruthy();
+                await expect(this.itemList.nth(i).locator(this.removeButton)).toHaveText(removeButtonText);
                 break;
             }
         }

@@ -8,7 +8,8 @@ class CheckoutComplete
         this.completeHeader = page.locator("[data-test='complete-header']");
     }
     async validateCheckoutComplete(completeHeaderText){
-        expect(await this.completeHeader.textContent()).toBe(completeHeaderText);
+        await expect(this.completeHeader).toBeVisible();
+        await expect(this.completeHeader).toHaveText(completeHeaderText);
     }
 }
 module.exports = {CheckoutComplete};
