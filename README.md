@@ -1,6 +1,6 @@
 # Playwright Mayan Demo
 
-This project demonstrates end-to-end testing of a Mayan-themed e-commerce website using Playwright, a Node.js library for automating web browsers. It follows the Page Object Model (POM) pattern for maintainable and scalable test automation.
+This project demonstrates end-to-end testing for saucelabs e-commerce website using Playwright, a Node.js library for automating web browsers. It follows the Page Object Model (POM) pattern for maintainable and scalable test automation.
 
 ## Features
 
